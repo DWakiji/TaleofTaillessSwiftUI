@@ -57,11 +57,11 @@ struct Chapter2View: View {
                 
                 // Display content based on the selected option
                 if selectedOption == .option1 {
-                    Text("Content for Option 1 goes here...")
+                    Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
                         .font(.body)
                         .padding()
                 } else if selectedOption == .option2 {
-                    Text("Content for Option 2 goes here...")
+                    Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
                         .font(.body)
                         .padding()
                 }
