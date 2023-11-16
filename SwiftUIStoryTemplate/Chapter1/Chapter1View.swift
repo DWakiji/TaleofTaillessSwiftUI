@@ -24,23 +24,15 @@ struct Chapter1View: View {
                 .frame(width: 300, height: 200)
                 .scaledToFill()
         }
-        
-            }
+    }
 }
+
+//add tab bar
+struct TabBarStuff {
+    TabView
 
 #Preview {
     Chapter1View()
     }
-
-    
-    //add tab bar
-    //HStack{
-    //    TabView{
-    //        .tabItem {
-    //            Label(Pages, icon: <#T##() -> Icon#>)
-    //        }
-    //
-    //    }
-    //}
     
     
