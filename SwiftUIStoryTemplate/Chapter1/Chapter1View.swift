@@ -1,6 +1,6 @@
 import SwiftUI
 
-//Add Chapter picture(square)
+//Add Chapter picture(square)*
 //Add chapter one as a tittle *
 //Navagation bar
 //Tab bar with pages and when you click on it the pages show
@@ -8,14 +8,39 @@ import SwiftUI
 //Done button
 //Next Button
 
+
+//add photo
 struct Chapter1View: View {
     var body: some View {
-        Text("Chapter One")
-    }
+        VStack{
+            
+            //Tittle
+            Text("Chapter One")
+                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+            
+            //Photo
+            Image("Damian")
+                .resizable()
+                .frame(width: 300, height: 200)
+                .scaledToFill()
+        }
+        
+            }
 }
 
 #Preview {
     Chapter1View()
     }
 
-
+    
+    //add tab bar
+    //HStack{
+    //    TabView{
+    //        .tabItem {
+    //            Label(Pages, icon: <#T##() -> Icon#>)
+    //        }
+    //
+    //    }
+    //}
+    
+    
