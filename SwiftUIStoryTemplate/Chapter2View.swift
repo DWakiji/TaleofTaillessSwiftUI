@@ -20,25 +20,20 @@ struct Chapter2View: View {
         NavigationView {
             ScrollView {
                 VStack {
-                    // Top image
-                    Image("your_top_image")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(height: 200)
-                    
                     // Text content inside a box with a ScrollView
                     VStack {
-                        Text("Chapter 2")
+                        Text("Chapter 2") // Title
                             .font(.largeTitle)
                             .padding()
                         
+                        // Styled box with scrollable text content
                         ZStack {
                             Color.white // Background color of the box
                                 .cornerRadius(10) // Rounded corners for the box
                                 .shadow(radius: 5) // Add shadow for depth
                             
                             ScrollView {
-                                Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dui faucibus in ornare quam viverra orci sagittis eu. Rhoncus mattis rhoncus urna neque viverra. Tellus in metus vulputate eu scelerisque felis. Massa tincidunt nunc pulvinar sapien et. Ac turpis egestas sed tempus urna et pharetra pharetra. In nulla posuere sollicitudin aliquam ultrices. Habitasse platea dictumst vestibulum rhoncus. Nibh venenatis cras sed felis eget velit aliquet sagittis id. Id cursus metus aliquam eleifend mi in nulla posuere sollicitudin. Pellentesque diam volutpat commodo sed egestas egestas. Ornare suspendisse sed nisi lacus sed viverra tellus. Pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at. Urna nunc id cursus metus aliquam. Dolor sit amet consectetur adipiscing elit pellentesque. Et ultrices neque ornare aenean. Sed vulputate odio ut enim blandit volutpat maecenas.")
+                                Text("Once upon a time in a faraway kingdom, there lived a wise and kind king named King Damian. King Damian was loved and respected by his subjects for his wisdom and fairness in ruling the kingdom.")
                                     .font(.body)
                                     .padding()
                             }
@@ -58,25 +53,22 @@ struct Chapter2View: View {
                     
                     // Display content based on the selected option
                     if selectedOption == .option1 {
-                        Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
-                            .font(.body)
-                            .padding()
+                        // Content for Option 1 goes here
+                        VisualStoryOption1()
                     } else if selectedOption == .option2 {
-                        Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
-                            .font(.body)
-                            .padding()
+                        // Content for Option 2 goes here
+                        VisualStoryOption2()
                     }
                     
-                    
-                    
-                    Text("Lorem ipsum dolor sit amet, consectetur ")
-                        .font(.body)
-                        .padding()
-                    
+                    // Top image
+                    Image("your_top_image")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(height: 200)
                     
                     // Button to navigate to Chapter 3
                     NavigationLink(destination: Chapter3View()) {
-                        Text("Go to Chapter 3")
+                        Text("Go to Chapter 3") // Button to go to Chapter 3
                             .font(.headline)
                             .padding()
                     }
@@ -86,15 +78,29 @@ struct Chapter2View: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(height: 200)
-                    
                 }
+                .navigationBarTitle("Chapter 2", displayMode: .inline) // Navigation title
             }
-            .navigationBarTitle("Chapter 2", displayMode: .inline)
-            
-            VStack {
-                
-            }
+            .navigationBarTitle("Chapter 2", displayMode: .inline) // Navigation title (duplicate, can be removed)
         }
+    }
+}
+
+struct VisualStoryOption1: View {
+    var body: some View {
+        // Visual elements for Option 1
+        Text("One day, a challenge arose in the kingdom as a mysterious creature stole the precious gem from the royal treasury. King Damian decided to embark on a quest to recover the gem and restore peace to the kingdom.")
+            .font(.body)
+            .padding()
+    }
+}
+
+struct VisualStoryOption2: View {
+    var body: some View {
+        // Visual elements for Option 2
+        Text("On that fateful day, King Damian faced a difficult decision. The kingdom was in turmoil, and some villagers questioned his leadership. He had to choose between listening to their demands for change or remaining true to his principles.")
+            .font(.body)
+            .padding()
     }
 }
 
