@@ -8,7 +8,8 @@ struct Chapter1Model {
 struct Chapter1View: View {
     var backgroundColor = Color("BackgroundColor")
     var textColor = Color("TextColor")
-        var storyBlock: [Chapter1Model] = [
+    
+    var storyBlock: [Chapter1Model] = [
             
             Chapter1Model(storyImage: "Damian2", storyText: "Once upon a time, in a dark, sun-dappled forest, there lived a squirrel named Damian. Damian was not your typical squirrel; he was tremendously self-centered. His lush, bushy tail was on display as he pranced around the treetops for the enjoyment of any nearby forest animal. He thought that the woodland's most magnificent feature was his tail. He was certain that he was the most daring and charming squirrel in the forest, and he used every opportunity to prove it."),
             
@@ -29,6 +30,7 @@ struct Chapter1View: View {
     @State var index: Int = 0
     @State var isDoneReadingChapter3 = false
     @State var isGoingBackToChapter2 = false
+    
     
     var body: some View {
         
@@ -83,8 +85,8 @@ struct Chapter1View: View {
                         
                     }, label: {
                         Rectangle()
-                            .foregroundColor(backgroundColor)
-                            .frame(width: 150, height:70)
+                            
+                            .frame(width: 150, height:50)
                             .cornerRadius(15.0)
                             .overlay {
                                 Text("Go Back")
@@ -101,8 +103,8 @@ struct Chapter1View: View {
                             }
                         }, label: {
                             Rectangle()
-                                .foregroundColor(backgroundColor)
-                                .frame(width: 150, height:70)
+                                
+                                .frame(width: 150, height:50)
                                 .cornerRadius(15.0)
                                 .overlay {
                                     Text("Next")
@@ -115,8 +117,11 @@ struct Chapter1View: View {
                         })
                         .padding(.leading, 40)
                     })
+                    
                 }
+
             }
+            .background(backgroundColor) // Set the background color for the entire VStack
         }
     }
 }
