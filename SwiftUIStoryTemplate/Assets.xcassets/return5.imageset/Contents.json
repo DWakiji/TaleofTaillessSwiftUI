@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "DALL·E 2023-11-17 11.20.33 - A beautiful 'happily ever after' scene in the same autumn forest, now showing the squirrel community living in harmony and joy. In this final chapter .png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
