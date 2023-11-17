@@ -7,105 +7,132 @@
 
 import SwiftUI
 
+struct Chapter2Model {
+    var storyImage: String
+    var storyText: String
+}
+
 struct Chapter2View: View {
-    // Define options
-    enum Option: String, CaseIterable {
-        case option1 = "Option 1"
-        case option2 = "Option 2"
-    }
+    var backgroundColor = Color("BackgroundColor")
+    var textColor = Color("TextColor")
     
-    @State private var selectedOption = Option.option1
+    var storyBlock: [Chapter2Model] = [
+            
+            Chapter2Model(storyImage: "return", storyText: "Damian returns to his Squirrel village and the familiar surroundings of his palace, but instead of the warm welcome he expected, he is met with mocking and scorn from the squirrel residents. They cannot fathom Damian without his prized tail, and the shock of his transformation has stirred discontent among the populace. A growing demand to dethrone and exile Damian spreads like wildfire, as they believe a squirrel without a tail is unfit to be part of their community."),
+            
+            Chapter2Model(storyImage: "Exiled1", storyText: "The squirrel colony, once a place of camaraderie and warmth, has transformed into a hostile and unforgiving environment for Damian. He mourns not only the physical loss but also the loss of the acceptance and support he once enjoyed. As he grapples with the prospect of exile, he must confront the harsh reality that the very squirrels he considered his friends and neighbors now seek his removal, leaving him feeling isolated and rejected in his own community."),
+            
+            Chapter2Model(storyImage: "Exiled2", storyText: "Damian's journey takes an unexpected turn as he faces the harsh judgment of his own kind. The squirrel residents' demand for his exile forces him to contemplate his identity and what it truly means to be a squirrel. In Chapter 3, he embarks on a 40-day, 40-night venture into the vast Forest, seeking revenge against the foxes who had caused him such pain. Little does he know that the forest will hold a profound lesson about love and forgiveness, as he encounters a vegan pacifist fox who will change the course of his life forever."),
+            
+        ]
+        
+        
+    
+        
+    @State var index: Int = 0
+    @State var isDoneReadingChapter3 = false
+    @State var isGoingBackToChapter2 = false
+    
     
     var body: some View {
-        NavigationView {
-            ScrollView {
-                VStack {
-                    // Text content inside a box with a ScrollView
-                    VStack {
-                        Text("Chapter 2") // Title
+        
+        if isDoneReadingChapter3 == true {
+            Chapter3View()
+        }
+        
+        else if isGoingBackToChapter2 == true {
+            Chapter3View()
+        }
+        
+        else {
+            VStack{
+                Rectangle()
+                    .foregroundColor(backgroundColor)
+                    .frame(width: 350, height: 40)
+                    .overlay {
+                        Text("Chapter 2")
+                            .foregroundStyle(textColor)
                             .font(.largeTitle)
-                            .padding()
+                            .bold()
+                    }
+                
+                Rectangle()
+                    .foregroundColor(backgroundColor)
+                    .overlay {
+                        Image(storyBlock[index].storyImage)
+                            .resizable()
+                            .scaledToFit()
+                    }
+                
+                
+                Rectangle()
+                    .foregroundColor(backgroundColor)
+//                    .padding(.bottom)
+//                    .padding(.top)
+                    .overlay {
+                        ScrollView {
+                            Text(storyBlock[index].storyText)
+                                .foregroundStyle(textColor)
+                                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                                .padding()
+                        }
+                    }
+                
+                HStack {
+                    Button(action: {
+                        index -= 1
+                        if index < 0 {
+                            isGoingBackToChapter2 = true
+                        }
                         
-                        // Styled box with scrollable text content
-                        ZStack {
-                            Color.white // Background color of the box
-                                .cornerRadius(10) // Rounded corners for the box
-                                .shadow(radius: 5) // Add shadow for depth
+                    }, label: {
+                        Rectangle()
                             
-                            ScrollView {
-                                Text("Once upon a time in a faraway kingdom, there lived a wise and kind king named King Damian. King Damian was loved and respected by his subjects for his wisdom and fairness in ruling the kingdom.")
-                                    .font(.body)
-                                    .padding()
+                            .frame(width: 150, height:50)
+                            .cornerRadius(15.0)
+                            .overlay {
+                                Text("Go Back")
+                                    .foregroundStyle(textColor)
+                                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                                
                             }
-                        }
-                        .padding(10) // Padding within the box
-                    }
+                        
+                        Button(action: {
+                            index += 1
+                            
+                            if index > storyBlock.count - 1 {
+                                isDoneReadingChapter3 = true
+                            }
+                        }, label: {
+                            Rectangle()
+                                
+                                .frame(width: 150, height:50)
+                                .cornerRadius(15.0)
+                                .overlay {
+                                    Text("Next")
+                                        .foregroundStyle(textColor)
+                                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                                    
+                                }
+                            
+                            
+                        })
+                        .padding(.leading, 40)
+                    })
                     
-                    // Option selector buttons
-                    Picker("Choose an option", selection: $selectedOption) {
-                        ForEach(Option.allCases, id: \.self) { option in
-                            Text(option.rawValue)
-                                .tag(option)
-                        }
-                    }
-                    .pickerStyle(SegmentedPickerStyle())
-                    .padding()
-                    
-                    // Display content based on the selected option
-                    if selectedOption == .option1 {
-                        // Content for Option 1 goes here
-                        VisualStoryOption1()
-                    } else if selectedOption == .option2 {
-                        // Content for Option 2 goes here
-                        VisualStoryOption2()
-                    }
-                    
-                    // Top image
-                    Image("your_top_image")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(height: 200)
-                    
-                    // Button to navigate to Chapter 3
-                    NavigationLink(destination: Chapter3View()) {
-                        Text("Go to Chapter 3") // Button to go to Chapter 3
-                            .font(.headline)
-                            .padding()
-                    }
-                    
-                    // Bottom image
-                    Image("your_bottom_image")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(height: 200)
                 }
-                .navigationBarTitle("Chapter 2", displayMode: .inline) // Navigation title
+
             }
-            .navigationBarTitle("Chapter 2", displayMode: .inline) // Navigation title (duplicate, can be removed)
+            .background(backgroundColor) // Set the background color for the entire VStack
         }
     }
 }
 
-struct VisualStoryOption1: View {
-    var body: some View {
-        // Visual elements for Option 1
-        Text("One day, a challenge arose in the kingdom as a mysterious creature stole the precious gem from the royal treasury. King Damian decided to embark on a quest to recover the gem and restore peace to the kingdom.")
-            .font(.body)
-            .padding()
-    }
-}
 
-struct VisualStoryOption2: View {
-    var body: some View {
-        // Visual elements for Option 2
-        Text("On that fateful day, King Damian faced a difficult decision. The kingdom was in turmoil, and some villagers questioned his leadership. He had to choose between listening to their demands for change or remaining true to his principles.")
-            .font(.body)
-            .padding()
-    }
-}
 
-struct Chapter2View_Previews: PreviewProvider {
-    static var previews: some View {
-        Chapter2View()
+
+#Preview {
+    Chapter1View()
     }
-}
+    
+    

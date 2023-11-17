@@ -19,9 +19,7 @@ struct Chapter1View: View {
             
             Chapter1Model(storyImage: "Damian3", storyText: "An unexpected guest interrupted the squirrel party's peaceful gathering as they continued their foraging. A sly fox with acute instincts stepped out of the undergrowth and eyed the squirrel gathering with a menacing look. Damian bravely and quickly stood his ground, allowing the three ladies to quickly flee while he faced the fox with unshakable determination. He bravely attempted to divert the sly fox's attention, but as he ran away to join the others, the fox's keen fangs snapped, and the male squirrel lost his treasured tail in a devastating turn of events."),
             
-            Chapter1Model(storyImage: "Exiled1", storyText: "As he returned to the squirrel colony, he expected comfort and support from his fellow squirrels. However, what he encountered was quite the opposite.To his shock and dismay, some of the squirrels within the colony began to ridicule and isolate him. They cruelly called him ugly and imperfect. In their eyes, without his glorious tail, Damian was no longer the handsome squirrel he once was. His appearance had been his defining feature, and with it gone, he was scorned."),
             
-            Chapter1Model(storyImage: "Exiled2", storyText: "The leader of the colony, a stern and unkind squirrel named Reggie, made the decision to exclude Damian from their tight-knit community. He believed that the colony should only consist of the most beautiful and perfect squirrels, and he considered Damian's current appearance unacceptable.Heartbroken and humiliated, Damian was cast out from the only family he had ever known. He was left to fend for himself in the vast forest, where he felt isolated and alone.")
         ]
         
         
