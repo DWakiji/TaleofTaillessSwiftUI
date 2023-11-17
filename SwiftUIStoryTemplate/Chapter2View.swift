@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+//ejdfvsd
 struct Chapter2Model {
     var storyImage: String
     var storyText: String
