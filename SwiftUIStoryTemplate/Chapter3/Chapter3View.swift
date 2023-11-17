@@ -74,8 +74,8 @@ struct Chapter3View: View {
                         
                     }, label: {
                         Rectangle()
-                            .foregroundColor(backgroundColor)
-                            .frame(width: 150, height:70)
+                            
+                            .frame(width: 150, height:50)
                             .cornerRadius(15.0)
                             .overlay {
                                 Text("Go Back")
@@ -92,8 +92,8 @@ struct Chapter3View: View {
                             }
                         }, label: {
                             Rectangle()
-                                .foregroundColor(backgroundColor)
-                                .frame(width: 150, height:70)
+                                
+                                .frame(width: 150, height:50)
                                 .cornerRadius(15.0)
                                 .overlay {
                                     Text("Next")
@@ -108,7 +108,10 @@ struct Chapter3View: View {
                     })
                 }
             }
+            .background(backgroundColor) // Set the background color for the entire VStack
         }
+        
+        
     }
 }
 #Preview {
