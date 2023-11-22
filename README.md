@@ -39,6 +39,8 @@ Chapter 3: Damian's Journey in the Forest
 ![Chapter 4](screenshots/Screenshot%202023-11-22%20at%202.01.03%20PM.png)
 Chapter 4: Damian's Return
 
+
+
 ## How to Use
 
 To use this template for your own interactive story:
