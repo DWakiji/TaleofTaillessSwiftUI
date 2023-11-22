@@ -27,16 +27,16 @@ Each chapter includes an image and a piece of text that advances the story. The 
 
 ## Screenshots
 
-![Chapter 1](Screenshots/Chapter1.png)
+![Chapter 1](screenshots/Screenshot 2023-11-22 at 2.01.29 PM.png)
 *Chapter 1: Introduction to Damian*
 
-![Chapter 2](Screenshots/Chapter2.png)
+![Chapter 2](screenshots/Screenshot 2023-11-22 at 2.01.17 PM.png)
 *Chapter 2: Damian's Exile*
 
-![Chapter 3](Screenshots/Chapter3.png)
+![Chapter 3](screenshots/Screenshot 2023-11-22 at 2.01.09 PM.png)
 *Chapter 3: Damian's Journey in the Forest*
 
-![Chapter 4](Screenshots/Chapter4.png)
+![Chapter 4](screenshots/Screenshot 2023-11-22 at 2.01.03 PM.png)
 *Chapter 4: Damian's Return*
 
 ## How to Use
