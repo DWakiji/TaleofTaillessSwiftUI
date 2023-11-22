@@ -56,5 +56,3 @@ Feel free to modify the design, colors, and styles to match your story's theme.
 Contributions are welcome! If you'd like to contribute to this project, please follow the standard GitHub fork and pull request workflow. Feel free to report issues or suggest improvements.
 
 ## License
-
-This project is licensed under the [MIT License](LICENSE).
